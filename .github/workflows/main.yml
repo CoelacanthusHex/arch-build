@@ -1,0 +1,24 @@
+name: BUILD
+
+on:
+  schedule:
+    - cron:  '* */6 * * *'
+
+jobs:
+  build_osu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: DuckSoft/build-aur-action@master
+      with:
+        repo-name: lemon-lime-git
+    
+    - uses: ncipollo/release-action@v1.6.1
+      with:
+        allowUpdates: true
+        tag: "packages"
+        artifacts: "./lemon-lime-git/*.xz"
+        token: ${{ secrets.GITHUB_TOKEN }}
+  
+
+ 
