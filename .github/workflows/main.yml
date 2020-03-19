@@ -4,6 +4,8 @@ on:
   schedule:
     - cron:  '* */6 * * *'
   status:
+  issues:
+    types: [opened, edited, milestoned]
 
 
 jobs:
