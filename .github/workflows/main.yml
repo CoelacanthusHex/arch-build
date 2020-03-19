@@ -3,7 +3,7 @@ name: BUILD
 on:
   schedule:
     - cron:  '* */6 * * *'
-  status
+  status:
 
 jobs:
   build_lemon:
