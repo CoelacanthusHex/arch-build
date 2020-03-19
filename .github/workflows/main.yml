@@ -1,9 +1,9 @@
 name: BUILD
 
 on:
-  status:
   schedule:
     - cron:  '* */6 * * *'
+  status
 
 jobs:
   build_lemon:
