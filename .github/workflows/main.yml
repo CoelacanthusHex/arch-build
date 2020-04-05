@@ -37,19 +37,19 @@ jobs:
         tag: "packages"
         artifacts: "./systemd-cleanup-pacman-hook/*.xz"
         token: ${{ secrets.GITHUB_TOKEN }}  
-#  build_nheko:
-#    runs-on: ubuntu-latest
+  build_nheko_git:
+    runs-on: ubuntu-latest
 
-#    steps:
-#    - uses: DuckSoft/build-aur-action@master
-#      with:
-#        repo-name: nheko
+    steps:
+    - uses: DuckSoft/build-aur-action@master
+      with:
+        repo-name: nheko-git
     
-#    - uses: ncipollo/release-action@v1.6.1
-#      with:
-#        allowUpdates: true
-#        tag: "packages"
-#        artifacts: "./nheko/*.xz"
-#        token: ${{ secrets.GITHUB_TOKEN }}  
+    - uses: ncipollo/release-action@v1.6.1
+      with:
+        allowUpdates: true
+        tag: "packages"
+        artifacts: "./nheko-git/*.xz"
+        token: ${{ secrets.GITHUB_TOKEN }}  
 
  
