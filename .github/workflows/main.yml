@@ -51,5 +51,32 @@ jobs:
         tag: "packages"
         artifacts: "./nheko-git/*.xz"
         token: ${{ secrets.GITHUB_TOKEN }}  
+  build_neovide:
+    runs-on: ubuntu-latest
 
+    steps:
+    - uses: DuckSoft/build-aur-action@master
+      with:
+        repo-name: neovide
+    
+    - uses: ncipollo/release-action@v1.6.1
+      with:
+        allowUpdates: true
+        tag: "packages"
+        artifacts: "./neovide/*.xz"
+        token: ${{ secrets.GITHUB_TOKEN }}
+  build_neovide_git:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: DuckSoft/build-aur-action@master
+      with:
+        repo-name: neovide-git
+    
+    - uses: ncipollo/release-action@v1.6.1
+      with:
+        allowUpdates: true
+        tag: "packages"
+        artifacts: "./neovide-git/*.xz"
+        token: ${{ secrets.GITHUB_TOKEN }}
  
