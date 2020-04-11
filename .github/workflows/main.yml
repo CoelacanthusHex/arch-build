@@ -9,87 +9,23 @@ on:
 
 
 jobs:
-  build_lemon:
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      matrix:
+        repos: [osu-lazer, lemon-lime-git, systemd-cleanup-pacman-hook, librime-lua-git, nheko-git]
 
+      fail-fast: false
+      
+    runs-on: ubuntu-latest
+    
     steps:
     - uses: DuckSoft/build-aur-action@master
       with:
-        repo-name: lemon-lime-git
+        repo-name: ${{ matrix.repos }}
     
     - uses: ncipollo/release-action@v1.6.1
       with:
         allowUpdates: true
         tag: "packages"
-        artifacts: "./lemon-lime-git/*.xz"
-        token: ${{ secrets.GITHUB_TOKEN }}
-  build_systemd_cleanup_pacman_hook:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: DuckSoft/build-aur-action@master
-      with:
-        repo-name: systemd-cleanup-pacman-hook
-    
-    - uses: ncipollo/release-action@v1.6.1
-      with:
-        allowUpdates: true
-        tag: "packages"
-        artifacts: "./systemd-cleanup-pacman-hook/*.xz"
-        token: ${{ secrets.GITHUB_TOKEN }}  
-  build_nheko_git:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: DuckSoft/build-aur-action@master
-      with:
-        repo-name: nheko-git
-    
-    - uses: ncipollo/release-action@v1.6.1
-      with:
-        allowUpdates: true
-        tag: "packages"
-        artifacts: "./nheko-git/*.xz"
-        token: ${{ secrets.GITHUB_TOKEN }}  
-  build_neovide:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: DuckSoft/build-aur-action@master
-      with:
-        repo-name: neovide
-    
-    - uses: ncipollo/release-action@v1.6.1
-      with:
-        allowUpdates: true
-        tag: "packages"
-        artifacts: "./neovide/*.xz"
-        token: ${{ secrets.GITHUB_TOKEN }}
-  build_neovide_git:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: DuckSoft/build-aur-action@master
-      with:
-        repo-name: neovide-git
-    
-    - uses: ncipollo/release-action@v1.6.1
-      with:
-        allowUpdates: true
-        tag: "packages"
-        artifacts: "./neovide-git/*.xz"
-        token: ${{ secrets.GITHUB_TOKEN }}
-  build_librime_lua_git:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: DuckSoft/build-aur-action@master
-      with:
-        repo-name: librime-lua-git
-    
-    - uses: ncipollo/release-action@v1.6.1
-      with:
-        allowUpdates: true
-        tag: "packages"
-        artifacts: "./librime-lua-git/*.xz"
+        artifacts: "./*/*.xz"
         token: ${{ secrets.GITHUB_TOKEN }}
