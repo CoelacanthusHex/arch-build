@@ -12,7 +12,7 @@ jobs:
   build:
     strategy:
       matrix:
-        repos: [python-powerline-git, osu-lazer, lemon-lime-git, systemd-cleanup-pacman-hook, librime-lua-git, mystiq]
+        repos: [osu-lazer, lemon-lime-git, systemd-cleanup-pacman-hook, librime-lua-git, fcitx5-pinyin-zhwiki]
 
       fail-fast: false
       
