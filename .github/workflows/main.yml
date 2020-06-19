@@ -4,6 +4,8 @@ on:
   schedule:
     - cron:  '* */6 * * *'
   status:
+  push:
+    branches: master
   issues:
     types: [opened, edited, milestoned]
 
