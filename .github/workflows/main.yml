@@ -14,7 +14,7 @@ jobs:
   build:
     strategy:
       matrix:
-        repos: [osu-lazer, lemon-lime-git, systemd-cleanup-pacman-hook, librime-lua-git, mdbook, mdbook-epub]
+        repos: [osu-lazer, lemon-lime-git, systemd-cleanup-pacman-hook, librime-lua-git, mdbook, mdbook-epub, neovim-git]
 
       fail-fast: false
       
