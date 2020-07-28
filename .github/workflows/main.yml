@@ -29,5 +29,5 @@ jobs:
       with:
         allowUpdates: true
         tag: "packages"
-        artifacts: "./*/*.xz"
+        artifacts: "./*/*.zst"
         token: ${{ secrets.GITHUB_TOKEN }}
