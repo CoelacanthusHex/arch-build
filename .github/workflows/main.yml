@@ -14,7 +14,7 @@ jobs:
   build:
     strategy:
       matrix:
-        repos: [osu-lazer, systemd-cleanup-pacman-hook, fcitx5-skin-adwaita-dark, fcitx5-skin-base16-material-darker, fcitx5-skin-dark-numix, fcitx5-skin-dark-transparent, fcitx5-skin-materia-exp, lemon-lime, lemon-lime-git, rime-aurora-pinyin, rime-essay-simp, rime-opencc-emoji-symbols]
+        repos: [cling, osu-lazer, systemd-cleanup-pacman-hook, fcitx5-skin-adwaita-dark, fcitx5-skin-base16-material-darker, fcitx5-skin-dark-numix, fcitx5-skin-dark-transparent, fcitx5-skin-materia-exp, lemon-lime, lemon-lime-git, rime-aurora-pinyin, rime-essay-simp, rime-opencc-emoji-symbols]
 
       fail-fast: false
       
